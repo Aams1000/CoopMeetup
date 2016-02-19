@@ -1,0 +1,40 @@
+@(Users: Form[CreateUserForm])(implicit messages: Messages)
+
+@import helper._
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type='text/javascript' src='@routes.Assets.versioned("javascript/index.js")'></script>
+
+<!--&lt;!&ndash;<ul class="testUl" >&ndash;&gt;-->
+    <!--&lt;!&ndash;<li class="listElement">First element!</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<li class="listElement">Second element!</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+<ul id="users"></ul>
+
+<form type="text" action= "@routes.UserController.addUser()" method="post">
+    Username<br>
+    <input name="username" type="text"><br>
+    Password<br>
+    <input name="password" type="text"><br>
+    Email<br>
+    <input name="email" type="text"><br>
+    Number of posts<br>
+    <input name="numPosts" type="text"><br>
+    Reputation (1-5)<br>
+    <input name="reputation" type="text"><br>
+    <div class="buttons">
+        <input type="submit" value="Add User" onclick='@routes.Assets.versioned("javascript/index.js")'/>
+    </div>
+
+</form>
+
+
+<!--&lt;!&ndash;"uniqueId" -> number(min = 0, max = 100),&ndash;&gt;-->
+<!--&lt;!&ndash;"name" -> nonEmptyText,&ndash;&gt;-->
+<!--&lt;!&ndash;"sPassword" -> nonEmptyText,&ndash;&gt;-->
+<!--&lt;!&ndash;"emailAddress" -> nonEmptyText,&ndash;&gt;-->
+<!--&lt;!&ndash;"numberOfPosts" -> number(min = 0),&ndash;&gt;-->
+<!--&lt;!&ndash;"reputationLevel" -> number(min = 1, max = 5)&ndash;&gt;-->
+
